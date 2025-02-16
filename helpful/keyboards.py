@@ -2,16 +2,17 @@ from aiogram.types import (
     ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 )
 
-def create_reply_markup(data: list[str]) -> ReplyKeyboardMarkup:
-    return ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=i) for i in data]], resize_keyboard=True)
+def create_reply_markup(data: list[str], resize: bool = True, one_time: bool = False) -> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=i) for i in data]], resize_keyboard=resize, one_time_keyboard=one_time)
 
 
 main = ReplyKeyboardMarkup(keyboard=[
-    [KeyboardButton(text='ping'), KeyboardButton(text='Боты яровича')],
+    [KeyboardButton(text='Боты Яровича'), KeyboardButton(text='ping')],
 ], resize_keyboard=True)
 
 bot_info_default = InlineKeyboardMarkup(inline_keyboard=[
-    [InlineKeyboardButton(text='Понятно.', callback_data='main_page')]
+    [InlineKeyboardButton(text='Понятно.', callback_data='main_page')],
+    [InlineKeyboardButton(text='Оставить отзыв', callback_data='make_feedback')]
 ])
 
 mine_bots = InlineKeyboardMarkup(inline_keyboard=[

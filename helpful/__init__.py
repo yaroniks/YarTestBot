@@ -1,2 +1,2 @@
-from .config import *
+import helpful.config
 from .general import *
