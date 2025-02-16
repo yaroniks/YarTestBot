@@ -1,6 +1,6 @@
-import helpful.keyboards as kb
+import app.keyboards as kb
 from aiogram import types, F, Router
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import InlineKeyboardButton
 
 router = Router()
 
