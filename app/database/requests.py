@@ -16,7 +16,7 @@ async def save_review(user_id: int, bot: str, stars: int, text: str) -> None:
 
 async def has_review(user_id: int, bot: str) -> bool:
     async with async_session() as session:
-        review = await session.scalar(select(Review).where(Review.user_id == user_id and Review.bot == bot))
+        review = await session.scalar(select(Review).where(Review.user_id == user_id, Review.bot == bot))
         if review:
             return True
         return False
