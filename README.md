@@ -11,5 +11,5 @@ pip install -r req.txt
 После создайте файл .env и заполните следующие значения:
 ```.dotenv
 BOT_TOKEN=
-SQL_URL=sqlite+aiosqlite:///Database.sqlite3
+SQL_URL=
 ```
