@@ -36,8 +36,9 @@ async def rksibot_query(callback: types.CallbackQuery):
 @router.callback_query(F.data == 'testbot')
 async def testbot_query(callback: types.CallbackQuery):
     await callback.answer('Выбрано: YarTestBot')
+    markup = kb.bot_info_default.__deepcopy__()
+    markup.inline_keyboard[0].append(InlineKeyboardButton(text='GitHub', url='https://t.me/RKSIjournalbot'))
     await callback.message.edit_text('*YarTestBot*\n'
-                                     'Тестовый проект с новой архитектурой, используются Python Aiogram, SQLAlchemy, Dotenv.\n'
-                                     'Планируется сделать Open Source.\n'
+                                     'Тестовый Open Source телеграм бот с новой архитектурой на Python с ипользованием: Aiogram, SQLAlchemy, Dotenv.\n'
                                      f'Обозначение: {callback.data}',
                                      parse_mode='MARKDOWN', reply_markup=kb.bot_info_default)
