@@ -1,6 +1,6 @@
-from app.database.models import async_session
 from app.database.models import Chat, Review
-from sqlalchemy import select, insert
+from app.database.models import async_session
+from sqlalchemy import select, insert, update, delete
 
 async def add_chat(chat_id: int) -> None:
     async with async_session() as session:

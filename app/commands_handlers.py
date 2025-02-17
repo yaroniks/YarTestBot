@@ -1,7 +1,7 @@
 import app.keyboards as kb
 from aiogram import types, Router
-from aiogram.filters.command import Command, CommandStart
 import app.database.requests as req
+from aiogram.filters.command import Command, CommandStart
 
 router = Router()
 

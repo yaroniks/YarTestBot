@@ -2,8 +2,8 @@ import config
 import app.keyboards as kb
 import app.database.requests as req
 from aiogram import types, F, Router
-from aiogram.fsm.state import StatesGroup, State
 from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import StatesGroup, State
 
 router = Router()
 
@@ -35,7 +35,7 @@ async def stars_message(message: types.Message, state: FSMContext):
         stars = int(message.text[0])
     except:
         return await message.answer('Не удалось понять оценку.', reply_markup=kb.main)
-    await state.update_data(stars=message.text[0])
+    await state.update_data(stars=stars)
     await state.set_state(FeedBack.text)
     await message.answer('Отправьте текст отзыва.')
 
