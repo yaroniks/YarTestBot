@@ -7,6 +7,7 @@ from aiogram.fsm.state import StatesGroup, State
 
 router = Router()
 
+
 class FeedBack(StatesGroup):
     bot = State()
     stars = State()

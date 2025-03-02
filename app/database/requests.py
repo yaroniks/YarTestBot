@@ -2,6 +2,7 @@ from app.database.models import Chat, Review
 from app.database.models import async_session
 from sqlalchemy import select, insert, update, delete
 
+
 async def add_chat(chat_id: int) -> None:
     async with async_session() as session:
         chat = await session.scalar(select(Chat).where(Chat.id == chat_id))
@@ -9,10 +10,12 @@ async def add_chat(chat_id: int) -> None:
             session.add(Chat(id=chat_id))
             await session.commit()
 
+
 async def save_review(user_id: int, bot: str, stars: int, text: str) -> None:
     async with async_session() as session:
         session.add(Review(user_id=user_id, bot=bot, stars=stars, text=text))
         await session.commit()
+
 
 async def has_review(user_id: int, bot: str) -> bool:
     async with async_session() as session:

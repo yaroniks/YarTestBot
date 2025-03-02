@@ -7,6 +7,7 @@ from app.database.models import async_main
 
 logging.basicConfig(level=logging.INFO)
 
+
 async def main():
     await async_main()
 
@@ -17,6 +18,7 @@ async def main():
         await dp.start_polling(bot)
     except:
         pass
+
 
 if __name__ == '__main__':
     asyncio.run(main())

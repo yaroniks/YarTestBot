@@ -2,6 +2,7 @@ from aiogram.types import (
     ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 )
 
+
 def create_reply_markup(data: list[str], resize: bool = True, one_time: bool = False) -> ReplyKeyboardMarkup:
     return ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=i) for i in data]], resize_keyboard=resize, one_time_keyboard=one_time)
 

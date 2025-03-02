@@ -4,6 +4,7 @@ from aiogram.types import InlineKeyboardButton
 
 router = Router()
 
+
 @router.callback_query(F.data == 'main_page')
 async def main_page_query(callback: types.CallbackQuery):
     await callback.answer()
