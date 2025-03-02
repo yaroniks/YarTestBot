@@ -5,7 +5,7 @@
 ```bash
 git clone https://github.com/yaroniks/YarTestBot.git
 cd YarTestBot
-pip install -r req.txt
+pip install -r requirements.txt
 ```
 
 После создайте файл .env и заполните следующие значения:
